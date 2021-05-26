@@ -1,11 +1,19 @@
 class WasRun < TestCase
-  attr_reader :was_run # テスト実行したかのステータス
+  attr_reader :log
+
   def initialize(name)
-    @was_run = nil
     super
   end
 
+  def set_up
+    @log = :set_up
+  end
+
+  def tear_down
+    @log = "#{@log} tear_down"
+  end
+
   def test_method
-    @was_run = 1
+    @log = "#{@log} test_method"
   end
 end

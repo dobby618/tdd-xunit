@@ -4,8 +4,14 @@ class TestCase
   end
 
   def run
+    set_up
     send("#{@name}")
+    tear_down
   end
+
+  def set_up; end
+
+  def tear_down; end
 
   def assert(object, message = nil)
     if object
