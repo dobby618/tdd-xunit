@@ -3,8 +3,7 @@ class TestCase
     @name = name
   end
 
-  def run
-    result = TestResult.new
+  def run(result)
     result.test_started
     set_up
     begin
