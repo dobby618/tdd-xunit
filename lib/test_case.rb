@@ -7,7 +7,11 @@ class TestCase
     result = TestResult.new
     result.test_started
     set_up
-    send("#{@name}")
+    begin
+      send("#{@name}")
+    rescue StandardError
+      result.test_failed
+    end
     tear_down
     result
   end

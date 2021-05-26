@@ -19,6 +19,6 @@ class WasRun < TestCase
 
   def test_broken_method
     @log = "#{@log} test_broken_method"
-    raise Exception # 一旦、棚上げ
+    raise StandardError # 一旦、棚上げ
   end
 end
